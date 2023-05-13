@@ -3,7 +3,8 @@ import './App.css';
 import Navbar from './components/Navbar';
 import { fetchFixtures } from './lib/FetchData';
 import { data } from './lib/DummyData';
-import Table from './components/table';
+import Table from './components/Table';
+import { BrowserRouter, Route, Router, Routes } from 'react-router-dom';
 
 function App() {
 
@@ -18,11 +19,13 @@ function App() {
 
     console.log(data);
   return (
-    < >
-    <Navbar/>
-    <Table data={data} />
-      
-    </>
+    <BrowserRouter>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Table data={data} />} />
+        <Route path="/fixtures/:id" element={<Table data={data} />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
