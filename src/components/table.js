@@ -39,7 +39,7 @@ export default function Table({ data }) {
             </div>
 
 
-          <div className='text-center text-green-600 ' >
+          <div className='text-center text-red-600 ' >
             {fixture.fixture.status.elapsed}
 
             </div>
