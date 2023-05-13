@@ -4,7 +4,7 @@ import Navbar from './components/Navbar';
 import { fetchFixtures } from './lib/FetchData';
 import { data } from './lib/DummyData';
 import Table from './components/Table';
-import { BrowserRouter, Route, Router, Routes } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 function App() {
 
