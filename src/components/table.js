@@ -3,9 +3,10 @@ import { Link } from 'react-router-dom';
 
 export default function Table({ data }) {
   return (
-    <Link to='/fixtures'>
+    
     <div className='bg-gray-400 grid grid-cols-1 divide-y text-black'>
       {data.response.map((fixture) => (
+        <Link to={`/fixtures/${fixture.fixture.id}`}  key={fixture.fixture.id} >
         <div className='bg-white py-2'>
           <div align='center'>
             <img
@@ -50,9 +51,9 @@ export default function Table({ data }) {
 
         </div>
 
-        
+        </Link>
       ))}
     </div>
-    </Link>
+
     );
 }
