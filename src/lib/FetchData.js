@@ -1,13 +1,16 @@
-import axios from 'axios';
+// import axios from 'axios';
+// import dotenv from'dotenv'
 
 export const fetchFixtures = async () => {
+
+    // dotenv.config()
 
     // const options = {
     //     method: 'GET',
     //     url: 'https://api-football-v1.p.rapidapi.com/v3/fixtures',
     //     params: {live: 'all'},
     //     headers: {
-    //       'X-RapidAPI-Key': '707059c556msh3fbd0ec46e13549p165f06jsnf3d233c5e54b',
+    //       'X-RapidAPI-Key': process.env.API_KEY,
     //       'X-RapidAPI-Host': 'api-football-v1.p.rapidapi.com'
     //     }
     //   };

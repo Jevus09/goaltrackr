@@ -14,8 +14,8 @@ const Fixture = ({ data }) => {
   const fixture = results[0]
 
   return (
-    <div>
-      <div className='bg-white py-2'>
+    <div className='h-screen'>
+      <div className='bg-white text-black py-2'>
         <div align='center'>
           <img src={fixture.league.logo} width={25} alt={fixture.league.name} />
           {fixture.league.name}
@@ -50,26 +50,70 @@ const Fixture = ({ data }) => {
           {fixture.fixture.status.elapsed}
         </div>
       </div>
-        <div align='center' className='grid grid-cols-1 divide-y' >
-            <h1 className='bg-gray-700 p-1 text-gray-300 text-xl'>Events</h1>
-            {!fixture.events
+      <div align='center' className='grid grid-cols-1 divide-y'>
+        <h1 className='bg-gray-700 p-1 text-gray-300 text-xl'>Events</h1>
+        {!fixture.events
           ? null
           : fixture.events.map((event) => (
-              <div className="p-5" key={event.team.id}>
-                {event.type === "Goal" ? (
+              <div className='bg-white text-black p-5' key={event.team.id + 1}>
+                {event.type === 'Goal' ? (
                   <div>
                     <img src={BALL} width={25} alt='' />
                   </div>
                 ) : (
-                  <div className="badge badge-warning">{event.type}</div>
-                )}{" "}
-                {event.player.name}{" "}
-                <div className="text-green-700">{event.time.elapsed}</div>{event.team.name}
+                  <div className='badge badge-warning'>{event.type}</div>
+                )}{' '}
+                {event.player.name}{' '}
+                <div className='text-green-700 pb-2'>{event.time.elapsed}</div>
+                <div className=''>
+                  <img src={event.team.logo} width={25} />
+                  {event.team.name}
+                </div>
               </div>
             ))}
+      </div>
 
+      <div align='center' className='grid grid-cols-1 divide-y'>
+        <h1 className='bg-gray-700 p-1 text-gray-300 text-xl'>Score</h1>
+
+        <div className='bg-white text-black p-2'>
+          First Half
+          <br />
+          {fixture.score.halftime.home} : {fixture.score.halftime.away}
         </div>
 
+        {fixture.score.fulltime.home ? (
+          <div className='p-2'>
+            Full Time
+            <br />
+            {fixture.score.fulltime.home} : {fixture.score.fulltime.away}
+          </div>
+        ) : null}
+
+        {fixture.score.extratime.home ? (
+          <div className='p-2'>
+            Extra Time
+            <br />
+            {fixture.score.extratime.home} : {fixture.score.extratime.away}
+          </div>
+        ) : null}
+
+        {fixture.score.penalty.home ? (
+          <div className='p-2'>
+            Penalties
+            <br />
+            {fixture.score.penalty.home} : {fixture.score.penalty.away}
+          </div>
+        ) : null}
+      </div>
+
+      <div align='center' className='grid grid-cols-1 divide-y'>
+        <h1 className='bg-gray-700 p-1 text-gray-300 text-xl'>Match Details</h1>
+        <div className='p-2'>Stadium - {fixture.fixture.venue.name} </div>
+        <div className='p-2'>Country - {fixture.league.country} </div>
+        <div className='p-2'>{fixture.league.round} </div>
+        <div className='p-2'>Season {fixture.league.season - 2000}/{fixture.league.season - 1999} </div>
+        </div>
     </div>
   )
 }
