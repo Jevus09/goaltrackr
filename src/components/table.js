@@ -4,11 +4,17 @@ import { Link } from 'react-router-dom';
 export default function Table({ data }) {
 
   const [selectedLeague, setSelectedLeague] = useState('');
+
+  const resetFilter = () => {
+    setSelectedLeague(''); // Reset the selected league state variable
+  };
+
   return (
     
-    <div className=' bg-gray-400 grid grid-cols-1 divide-y text-black'>
+    <div className='bg-gray-400 grid grid-cols-1 divide-y text-black'>
       <div className='flex-row text-white' >
       <ul className="flex p-4 bg-base-100 justify-evenly">
+          <li><button className='text-green-600' onClick={() => resetFilter()}>All Live Games</button></li>
           <li><button onClick={() => setSelectedLeague('Premier League')}>Premier League</button></li>
           <li><button onClick={() => setSelectedLeague('La Liga')}>La Liga</button></li>
           <li><button onClick={() => setSelectedLeague('Serie A')}> Serie A</button></li>
@@ -21,7 +27,7 @@ export default function Table({ data }) {
   .filter((fixture) => selectedLeague === '' || fixture.league.name === selectedLeague)
   .map((fixture) => (
         <Link to={`/fixtures/${fixture.fixture.id}`}  key={fixture.fixture.id} >
-        <div className='h-fit bg-white py-2'>
+        <div className='bg-white py-2'>
           <div align='center'>
             <img
               src={fixture.league.logo}

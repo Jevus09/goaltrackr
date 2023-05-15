@@ -9,6 +9,7 @@ import Fixture from './components/Fixture';
 
 function App() {
 
+
   // const fetchData = async () => {
   //   const fixtures = await fetchFixtures()
   //   console.log(fixtures); 
