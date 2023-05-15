@@ -18,9 +18,9 @@ function App() {
   //   fetchData()
   // })
 
-    
+    console.log(data);
   return (
-    <div className='bg-white w-full md:w-[700px] lg:w-[800px] m-auto' >
+    <div className=' bg-white w-full md:w-[700px] lg:w-[800px] m-auto' >
 
     <BrowserRouter>
     <Navbar />
