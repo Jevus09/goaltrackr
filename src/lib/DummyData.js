@@ -126,7 +126,7 @@ export const data = {
             },
             "league": {
                 "id": 107,
-                "name": "I Liga",
+                "name": "Champions League",
                 "country": "Poland",
                 "logo": "https://media-1.api-sports.io/football/leagues/107.png",
                 "flag": "https://media-2.api-sports.io/flags/pl.svg",

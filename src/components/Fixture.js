@@ -1,20 +1,37 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import BALL from '../assets/ball.png'
+import { fetchFixtures } from '../lib/FetchData';
 
 const Fixture = ({ data }) => {
-  const params = useParams()
+ // const [fixture, setFixture] = useState([]);
 
-  const matchId = params.matchId
+ const params = useParams();
+ const matchId = params.matchId;
 
-  const results = data.response.filter((match) => {
-    return String(match.fixture.id) === matchId
-  })
+ const results = data.response.filter((match) => {
+   console.log(match);
+   return String(match.fixture.id) === matchId;
+ });
 
-  const fixture = results[0]
+ const fixture = results[0];
 
-  console.log( 'rest',fixture);
+ // const fetchInfo = async () => {
+ //   const data = await fetchFixtures();
 
+ //   const results = data.response.filter((match) => {
+ //     console.log(match);
+ //     return String(match.fixture.id) === matchId;
+ //   });
+
+ //   setFixture(results[0]);
+ // };
+
+ // useEffect(() => {
+ //   fetchInfo();
+ // }, []);
+
+ // if (!fixture) return <>loading</>;
   return (
     <div className='h-fit min-h-screen bg-white text-black'>
       <div className='py-2'>
