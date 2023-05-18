@@ -20,13 +20,16 @@ function App() {
   //   fetchInfo();
   // }, []);
 
+  const refresh = () => window.location.reload(true)
+
     console.log(fixtures);
   return (
-    <div className=' bg-white w-full md:w-[700px] lg:w-[800px] m-auto' >
+    <div className=' bg-white w-full md:w-[700px] lg:w-[800px] m-auto pb-10' >
 
     <BrowserRouter>
-    <Navbar />
-    {!fixtures ? (<progress className="progress w-56"></progress>) : (  
+    <Navbar onClick={refresh} />
+    <button className='btn btn-sm fixed bottom-3 right-2 z40' onClick={refresh} >Refresh</button>
+    {!fixtures ? (<div className='flex h-screen items-start justify-center mt-10 p-10' ><progress className="progress w-56"></progress> </div>) : (  
 
       <Routes>
         <Route path="/" element={<Table data={fixtures} />} />

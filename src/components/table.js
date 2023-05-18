@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
+import Sidebar from './Sidebar'
 
 export default function Table({ data }) {
   const [selectedLeague, setSelectedLeague] = useState('')
@@ -9,52 +10,93 @@ export default function Table({ data }) {
   }
 
   const filteredFixtures = data.response.filter(
-    (fixture) => selectedLeague === '' || fixture.league.name === selectedLeague
+    (fixture) => selectedLeague === '' || fixture.league.id === selectedLeague
   )
 
   console.log(filteredFixtures);
 
   return (
-    <div className='bg-gray-400 grid divide-y text-black'>
-      <div className='flex-row text-white'>
-        <ul className='flex p-4 bg-base-100 justify-evenly'>
-          <li>
-            <button className='text-green-600' onClick={() => resetFilter()}>
-              All Live Games
-            </button>
-          </li>
-          <li>
-            <button onClick={() => setSelectedLeague('Champions League')}>
+    <>
+    <div className="drawer drawer-end">
+  <input id="my-drawer-4" type="checkbox" className="drawer-toggle" />
+  <div className="drawer-content">
+  <div className='bg-gray-400 grid divide-y text-black'>
+<div className="navbar " data-theme="night">
+  <div className="navbar-start">
+    <div className="dropdown">
+      <label tabIndex={0} className="btn btn-ghost lg:hidden">
+        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+      </label>
+      <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
+      <li>
+            <button onClick={() => setSelectedLeague(3 || 2)}>
               Champions League
             </button>
           </li>
           <li>
-            <button onClick={() => setSelectedLeague('Premier League')}>
+            <button onClick={() => setSelectedLeague(39)}>
               Premier League
             </button>
           </li>
           <li>
-            <button onClick={() => setSelectedLeague('La Liga')}>
+            <button onClick={() => setSelectedLeague(140)}>
               La Liga
             </button>
           </li>
           <li>
-            <button onClick={() => setSelectedLeague('Serie A')}>
+            <button onClick={() => setSelectedLeague(135)}>
               Serie A
             </button>
           </li>
           <li>
-            <button onClick={() => setSelectedLeague('Ligue 1')}>
+            <button onClick={() => setSelectedLeague(186)}>
               Ligue 1
             </button>
           </li>
           <li>
-            <button onClick={() => setSelectedLeague('Bundesliga')}>
+            <button onClick={() => setSelectedLeague(78)}>
+              Bundesliga
+            </button>
+          </li>          
+      </ul>
+    </div>
+    <button onClick={() => resetFilter()} className="btn btn-ghost normal-case text-green-600 ">All Live Games</button>
+    <label htmlFor="my-drawer-4" className="drawer-button btn btn-ghost text-red-500 md:hidden ">All Leagues</label>
+  </div>
+  <div className="navbar-center hidden lg:flex">
+    <ul className="menu menu-horizontal px-1 text-white">
+
+          <li>
+            <button onClick={() => setSelectedLeague(39)}>
+              Premier League
+            </button>
+          </li>
+          <li>
+            <button onClick={() => setSelectedLeague(140)}>
+              La Liga
+            </button>
+          </li>
+          <li>
+            <button onClick={() => setSelectedLeague(135)}>
+              Serie A
+            </button>
+          </li>
+          <li>
+            <button onClick={() => setSelectedLeague(186)}>
+              Ligue 1
+            </button>
+          </li>
+          <li>
+            <button onClick={() => setSelectedLeague(78)}>
               Bundesliga
             </button>
           </li>
-        </ul>
-      </div>
+          <li>
+          <label htmlFor="my-drawer-4" className="drawer-button btn btn-ghost text-red-500">All Leagues</label>
+          </li>
+    </ul>
+  </div>
+</div>
       <div className={`${filteredFixtures.length <= 7  ? 'h-screen' : 'min-h-full' }`}>
         {filteredFixtures.length === 0 ? (
           <div className='bg-white py-2'>
@@ -110,5 +152,12 @@ export default function Table({ data }) {
           )))}
       </div>
     </div>
+  </div> 
+  <div className="drawer-side">
+    <label htmlFor="my-drawer-4" className="drawer-overlay"></label>
+        <Sidebar onClick={() => setSelectedLeague(3 || 2)} />
+  </div>
+</div>
+</>
   )
 }

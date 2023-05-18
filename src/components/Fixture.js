@@ -31,7 +31,7 @@ const Fixture = ({ data }) => {
  //   fetchInfo();
  // }, []);
 
- // if (!fixture) return <>loading</>;
+   if (!fixture) return <div className='flex h-screen items-start justify-center mt-10 p-10' ><progress className="progress w-56"></progress> </div>;
   return (
     <div className='h-fit min-h-screen bg-white text-black'>
       <div className='py-2'>
