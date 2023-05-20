@@ -7,30 +7,109 @@ const Sidebar = () => {
         <ul className="menu p-4 w-80 bg-base-100 text-base-content">
 
 <li>
-        <Link to="/leagues" >
+        <Link to="/league/39" >
           Premier League
         </Link>
       </li>
       <li>
-        <button >
+        <Link to='/league/' >
           La Liga
-        </button>
+        </Link>
       </li>
       <li>
-        <button >
+        <Link to='/league/' >
           Serie A
-        </button>
+        </Link>
       </li>
       <li>
-        <button >
+        <Link to='/league/' >
           Ligue 1
-        </button>
+        </Link>
       </li>
       <li>
-        <button >
+        <Link to='/league/78' >
           Bundesliga
-        </button>
+        </Link>
       </li>
+
+      <li>
+        <Link to="/league" >
+        Russian Premier League
+        </Link>
+      </li>
+      <li>
+        <Link to='/league/'>
+        Primeira Liga
+        </Link>
+      </li>
+      <li>
+        <Link to='/league/' >
+        Belgian Pro League
+        </Link>
+      </li>
+      <li>
+        <Link to='/league/' >
+        Eredivisie
+        </Link>
+      </li>
+      <li>
+        <Link to='/league/' >
+        Major League Soccer
+        </Link>
+      </li>
+
+      <li>
+        <Link to="/league" >
+        Süper Lig
+        </Link>
+      </li>
+      <li>
+        <Link to='/league/' >
+        Liga MX
+        </Link>
+      </li>
+      <li>
+        <Link to='/league/' >
+        Campeonato Brasileiro Série A
+        </Link>
+      </li>
+      <li>
+        <Link to='/league/' >
+        Scottish Premiership
+        </Link>
+      </li>
+      <li>
+        <Link to='/league/' >
+        Argentine Primera División
+        </Link>
+      </li>
+
+      <li>
+        <Link to="/league" >
+        Austrian Football Bundesliga
+        </Link>
+      </li>
+      <li>
+        <Link to='/league/' >
+        Ukrainian Premier League
+        </Link>
+      </li>
+      <li>
+        <Link to='/league/' >
+        Danish SuperLiga
+        </Link>
+      </li>
+      <li>
+        <Link to='/league/' >
+        Swiss Super League
+        </Link>
+      </li>
+      <li>
+        <Link to='/league/' >
+        Croatian First Football League
+        </Link>
+      </li>
+      
 </ul>
     
     

@@ -6,6 +6,7 @@ import { data } from './lib/DummyData';
 import Table from './components/Table';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Fixture from './components/Fixture';
+import League from './components/League';
 
 function App() {
 
@@ -34,6 +35,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Table data={fixtures} />} />
         <Route path="/fixtures/:matchId" element={<Fixture data={fixtures} />} />
+        <Route path="/league/:id" element={<League data={fixtures} />} />
       </Routes>
 
     )}
