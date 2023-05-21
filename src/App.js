@@ -35,7 +35,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Table data={fixtures} />} />
         <Route path="/fixtures/:matchId" element={<Fixture data={fixtures} />} />
-        <Route path="/league/:id" element={<League data={fixtures} />} />
+        <Route path="/league/:id" element={<League />} />
       </Routes>
 
     )}

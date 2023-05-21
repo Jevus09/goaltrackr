@@ -1,21 +1,19 @@
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import axios from 'axios'
 import { Leagues } from '../lib/DummyLeague'
 
 const League = () => {
   const params = useParams()
   const [response, setResponse] = useState(Leagues)
-  const [selectedMatchDay, setSelectedMatchDay] = useState(
-    'Regular Season - 36'
-  )
+  const [selectedMatchDay, setSelectedMatchDay] = useState('Regular Season - 1')
 
   // const fetchInfo = async () => {
   //   const options = {
   //     method: 'GET',
   //     url: 'https://api-football-v1.p.rapidapi.com/v3/fixtures',
   //     params: {
-  //       league: params.id,
+  //       league: Number(params.id),
   //       season: '2022'
   //     },
   //     headers: {
@@ -48,10 +46,13 @@ const League = () => {
   }
 
   return (
-    <div className='text-black'>
-      <div className='dropdown dropdown-hover text-white'>
-        <label className='btn btn-primary m-1'>Matchday</label>
+    <div className='h-fit min-h-screen text-black  '>
+      <div className='flex place-content-between'>
+      <Link to={'/'} className='btn btn-outline m-1 text-black '>Back</Link>
+      <div className=' flex dropdown dropdown-hover text-white justify-center place-content-center '>
+        <label className='btn btn-primary m-1 '>Matchday</label>
         <div>
+        </div>
           <ul className='h-screen dropdown-content menu p-2 shadow bg-base-100 rounded-box w-96'>
             {Array.from(
               new Set(response.response.map((item) => item.league.round))
@@ -64,12 +65,15 @@ const League = () => {
             ))}
           </ul>
         </div>
-        
       </div>
       <div align='center'>
-          <img src={response.response[1].league.logo} width={35} alt={response.response[1].league.name} />
-          {response.response[1].league.name}
-        </div>
+        <img
+          src={response.response[1].league.logo}
+          width={35}
+          alt={response.response[1].league.name}
+        />
+        {response.response[1].league.name}
+      </div>
       {response.response.map((item) => (
         <div key={item.fixture.id}>
           {item.league.round === selectedMatchDay && (
