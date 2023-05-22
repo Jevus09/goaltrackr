@@ -25,7 +25,7 @@ function App() {
 
     console.log(fixtures);
   return (
-    <div className=' bg-white w-full md:w-[700px] lg:w-[800px] m-auto pb-10' >
+    <div className='bg-white w-full md:w-[700px] lg:w-[800px] m-auto pb-10' >
 
     <BrowserRouter>
     <Navbar onClick={refresh} />

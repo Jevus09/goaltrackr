@@ -19,7 +19,7 @@ export default function Table({ data }) {
     <>
       <div className='drawer drawer-end'>
         <input id='my-drawer-4' type='checkbox' className='drawer-toggle' />
-        <div className='drawer-content'>
+        <div className='no-scrollbar drawer-content'>
           <div className='bg-gray-400 grid divide-y text-black'>
             <div className='navbar ' data-theme='night'>
               <div className='navbar-start'>
@@ -193,9 +193,10 @@ export default function Table({ data }) {
             </div>
           </div>
         </div>
+        
         <div className='drawer-side'>
           <label htmlFor='my-drawer-4' className='drawer-overlay'></label>
-          <Sidebar onClick={() => setSelectedLeague(3 || 2)} />
+          <Sidebar  />
         </div>
       </div>
     </>
