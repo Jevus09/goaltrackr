@@ -9,38 +9,38 @@ const League = () => {
   const [response, setResponse] = useState(Leagues)
   const [selectedMatchDay, setSelectedMatchDay] = useState('')
 
-  // const fetchInfo = async () => {
-  //   const options = {
-  //     method: 'GET',
-  //     url: 'https://api-football-v1.p.rapidapi.com/v3/fixtures',
-  //     params: {
-  //       league: Number(params.id),
-  //       season: '2022'
-  //     },
-  //     headers: {
-  //       'X-RapidAPI-Key': process.env.REACT_APP_API_KEY,
-  //       'X-RapidAPI-Host': 'api-football-v1.p.rapidapi.com'
-  //     }
-  //   };
+  const fetchInfo = async () => {
+    const options = {
+      method: 'GET',
+      url: 'https://api-football-v1.p.rapidapi.com/v3/fixtures',
+      params: {
+        league: Number(params.id),
+        season: '2022'
+      },
+      headers: {
+        'X-RapidAPI-Key': process.env.REACT_APP_API_KEY,
+        'X-RapidAPI-Host': 'api-football-v1.p.rapidapi.com'
+      }
+    };
 
-  //   try {
-  //     const axiosResponse = await axios.request(options);
-  //     setResponse(axiosResponse.data);
-  //     console.log('league', axiosResponse.data);
-  //   } catch (error) {
-  //     console.error(error);
-  //   }
-  // };
+    try {
+      const axiosResponse = await axios.request(options);
+      setResponse(axiosResponse.data);
+      console.log('league', axiosResponse.data);
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
-  // useEffect(() => {
-  //   fetchInfo();
-  // }, [params.id]);
+  useEffect(() => {
+    fetchInfo();
+  }, [params.id]);
 
-  // useEffect(() => {
-  //   if (response && response.response.length > 1) {
-  //     setSelectedMatchDay(String(response.response[1].league.round));
-  //   }
-  // }, [response]);
+  useEffect(() => {
+    if (response && response.response.length > 1) {
+      setSelectedMatchDay(String(response.response[1].league.round));
+    }
+  }, [response]);
 
   console.log('league', response)
 

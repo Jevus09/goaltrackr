@@ -12,14 +12,14 @@ function App() {
 
   const [fixtures, setFixtures] = useState(data)
 
-  // const fetchInfo = async () => {
-  //   const data = await fetchFixtures();
-  //   setFixtures(data);
-  // };
+  const fetchInfo = async () => {
+    const data = await fetchFixtures();
+    setFixtures(data);
+  };
 
-  // useEffect(() => {
-  //   fetchInfo();
-  // }, []);
+  useEffect(() => {
+    fetchInfo();
+  }, []);
 
   const refresh = () => window.location.reload(true)
 
