@@ -14,11 +14,11 @@ function App() {
 
   const fetchInfo = async () => {
     const data = await fetchFixtures();
-    setFixtures(data);
-  };
+    setFixtures(data)
+  }
 
   useEffect(() => {
-    fetchInfo();
+    fetchInfo()
   }, []);
 
   const refresh = () => window.location.reload(true)
