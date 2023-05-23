@@ -34,6 +34,7 @@ const League = () => {
 
   useEffect(() => {
     fetchInfo();
+    // eslint-disable-next-line
   }, [params.id]);
 
   useEffect(() => {

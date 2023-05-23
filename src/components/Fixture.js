@@ -85,7 +85,7 @@ const Fixture = ({ data }) => {
                 {event.player.name}{' '}
                 <div className='text-green-700 pb-2'>{event.time.elapsed}</div>
                 <div className=''>
-                  <img src={event.team.logo} width={25} />
+                  <img src={event.team.logo} width={25} alt={event.team.name} />
                 </div>
               </div>
             ))}
