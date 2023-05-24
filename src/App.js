@@ -13,20 +13,20 @@ function App() {
 
   const [fixtures, setFixtures] = useState(data)
 
-  // const fetchInfo = async () => {
-  //   const data = await fetchFixtures();
-  //   setFixtures(data)
-  // }
+  const fetchInfo = async () => {
+    const data = await fetchFixtures();
+    setFixtures(data)
+  }
 
-  // useEffect(() => {
-  //   fetchInfo()
-  // }, []);
+  useEffect(() => {
+    fetchInfo()
+  }, []);
 
   const refresh = () => window.location.reload(true)
 
     console.log(fixtures);
   return (
-    <div className='bg-white w-full md:w-[700px] lg:w-[800px] m-auto pb-10' >
+    <div className='bg-white w-full md:w-[700px] lg:w-[800px] m-auto ' >
 
     <BrowserRouter>
     <Navbar onClick={refresh} />
@@ -43,6 +43,7 @@ function App() {
       
     </BrowserRouter>
 
+    <Footer/>
     </div>
   );
 }
