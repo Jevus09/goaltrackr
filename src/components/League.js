@@ -18,7 +18,7 @@ const League = () => {
         season: '2022'
       },
       headers: {
-        'X-RapidAPI-Key': REACT_APP_API_KEY,
+        'X-RapidAPI-Key': process.env.REACT_APP_API_KEY,
         'X-RapidAPI-Host': 'api-football-v1.p.rapidapi.com'
       }
     };
