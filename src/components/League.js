@@ -3,6 +3,7 @@ import { Link, useParams } from 'react-router-dom'
 import axios from 'axios'
 import { Leagues } from '../lib/DummyLeague'
 import Sidebar from './Sidebar'
+import Footer from './Footer'
 
 const League = () => {
   const params = useParams()
@@ -155,6 +156,7 @@ const League = () => {
           <Sidebar />
         </div>
       </div>
+      <Footer/>
     </>
   )
 }

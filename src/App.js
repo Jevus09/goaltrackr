@@ -7,19 +7,20 @@ import Table from './components/Table';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Fixture from './components/Fixture';
 import League from './components/League';
+import Footer from './components/Footer';
 
 function App() {
 
   const [fixtures, setFixtures] = useState(data)
 
-  const fetchInfo = async () => {
-    const data = await fetchFixtures();
-    setFixtures(data)
-  }
+  // const fetchInfo = async () => {
+  //   const data = await fetchFixtures();
+  //   setFixtures(data)
+  // }
 
-  useEffect(() => {
-    fetchInfo()
-  }, []);
+  // useEffect(() => {
+  //   fetchInfo()
+  // }, []);
 
   const refresh = () => window.location.reload(true)
 
@@ -41,6 +42,7 @@ function App() {
     )}
       
     </BrowserRouter>
+
     </div>
   );
 }

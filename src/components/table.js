@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import Sidebar from './Sidebar'
+import Footer from './Footer'
 
 export default function Table({ data }) {
   const [selectedLeague, setSelectedLeague] = useState('')
@@ -199,6 +200,7 @@ export default function Table({ data }) {
           <Sidebar  />
         </div>
       </div>
+      <Footer/>
     </>
   )
 }
