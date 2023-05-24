@@ -10,7 +10,7 @@ export const fetchFixtures = async () => {
         url: 'https://api-football-v1.p.rapidapi.com/v3/fixtures',
         params: {live: 'all'},
         headers: {
-          'X-RapidAPI-Key': process.env.REACT_APP_API_KEY ,
+          'X-RapidAPI-Key': REACT_APP_API_KEY ,
           'X-RapidAPI-Host': 'api-football-v1.p.rapidapi.com'
         }
         
